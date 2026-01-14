@@ -63,9 +63,6 @@ This part cleans and organizes the raw job data so it is easier to analyze.
 - Extracts useful fields from job descriptions
 - Normalizes skills and salary ranges
 
-**Examples**
-- Removing unnecessary text from job descriptions
-- Standardizing skill names (e.g., “Python”, “python”)
 
 ---
 
@@ -79,9 +76,6 @@ This component allows the system to find job postings based on meaning rather th
 - Stores embeddings using DuckDB vss
 - Finds similar job postings using vector similarity
 
-**Example**
-- Searching for “Data Ops” may return “Data Engineering” jobs
-
 ---
 
 ### 5. AI and Recommendations
@@ -94,9 +88,6 @@ This part of the system uses an AI model to generate answers and learning recomm
 - Uses LiteLLM to make it easier to switch models
 - Combines search results with the model to generate responses
 
-**Example Questions**
-- “What skills are most common in backend jobs?”
-- “What should I learn next?”
 
 ---
 
