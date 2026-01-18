@@ -1,10 +1,19 @@
+Deliverables:
+- [ ] clear, specific, well-defined problem per exploration, plus context
+- [ ] all major reqs are listed
+  - [ ] software/system design supports reqs & is well-structured, 2 graphical examples.
+- [ ] detailed dev plan, milestones, balanced task allocation, supports project design
+- [ ]  techs are listed and support design and dev plan, list resources.
+  - [ ] deep-dive on one tech, related to dev plan.
+- [ ] conclusion/meme/refs.
+
 # Project Plan
 
-## Project Name
+## Career Intelligence
 
-## Course / Term / Year
+## CS 467 / Winter / 2026
 
-## Team Member Names
+## Daniel Lai, Fernando Vanegas, Giang Le 
 
 ---
 
