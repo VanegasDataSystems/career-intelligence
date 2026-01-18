@@ -1,13 +1,4 @@
 # career-intelligence
-## Team
-
-| Member           | Time          |
-|------------------|---------------|
-| Daniel Lai       | PST  (UTC-8)  |
-| Giang Le         | AEST (UTC+10) |
-| Fernando Vanegas | EST  (UTC-5)  |
-[Teams Link](https://teams.microsoft.com/l/team/19%3AwNOC5PTUVHZCYmC7AL4hrQiGiMs4ATPOX2Zvo0CFEU41%40thread.tacv2/conversations?groupId=b147789f-890a-4754-83fa-687d6a98dc52&tenantId=ce6d05e1-3c5e-4d62-87a8-4c4a2713c113)  
-[Repo Link](https://github.com/VanegasDataSystems/career-intelligence)
 ## Deliverable deadlines
 2026-01-12 Team Standards 2026-01-20 Project Plan  
 2026-01-22 Checkin Survey #1  
