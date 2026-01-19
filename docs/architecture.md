@@ -16,8 +16,32 @@ The system focuses on using Python and open-source tools.
 
 ## High-Level Architecture Diagram
 
-(Insert diagram here)
+```mermaid
+graph TD
+    subgraph Extraction ["1. Data Extraction"]
+        PW[Playwright Scrapers] --> DLT[dlt]
+    end
 
+    subgraph Storage ["2. & 3. Data Storage & Transformation"]
+        DLT --> |Raw Data| DDB[(DuckDB)]
+        SM[SQLMesh / Transformation] <--> DDB
+        DDB --> |Cleaned Data| VSS[DuckDB vss]
+    end
+
+    subgraph AI ["4. & 5. Vector Search & AI"]
+        VSS --> |Context| LLM[Ollama / LiteLLM]
+    end
+
+    subgraph UI_Group ["6. User Interface"]
+        UI[Python UI Framework]
+    end
+
+    %% External & Cross-Component Connections
+    JobBoards((Job Boards)) --> PW
+    UI ==> |User Query| VSS
+    LLM ==> |Response| UI
+
+```
 ---
 
 ## Main Components
