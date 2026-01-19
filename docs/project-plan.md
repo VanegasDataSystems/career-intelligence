@@ -80,7 +80,7 @@ A description of your initial thoughts on the structure of the software and/or s
 Include **at least two graphical examples** that demonstrate a screen or page mockup, design, architecture, flowchart, layout, etc.
 
 - Choose visuals that benefit from explanation.
-- Captions are required.
+-[.gitignore](../.gitignore) Captions are required.
 
 Aim for 2–4 pages. Use bullet lists, flow charts, block diagrams, and screen mockups where appropriate.
 
@@ -105,49 +105,7 @@ Include a brief discussion (1–2 paragraphs) on **one important technology**, t
 
 ## Development Plan
 
-A listing of the high-level project tasks for **each team member**, including a **time estimate in hours** for each major project milestone.
-
-Important notes:
-- Time spent per team member should be roughly equivalent
-- Minimum expectation: **10 hours per week per team member**
-- If workload is too small, expand scope or add stretch goals
-- If workload is too large, revise the plan
-
-Use the following structure (repeat as needed):
-
-### Team Member Name
-
-#### Progress Report #1
-
-- High-level Requirement / Story / Feature / Task (1 sentence)
-- Time estimate (hours)
-- Major Dependencies / Resources / Risks (if any)
-
-(add more tasks as required)
-
-#### Progress Report #2
-
-- High-level Requirement / Story / Feature / Task
-- Time estimate (hours)
-- Major Dependencies / Resources / Risks (if any)
-
-(add more tasks as required)
-
-#### Progress Report #3
-
-- High-level Requirement / Story / Feature / Task
-- Time estimate (hours)
-- Major Dependencies / Resources / Risks (if any)
-
-(add more tasks as required)
-
-#### Project Archive – Final
-
-- High-level Requirement / Story / Feature / Task
-- Time estimate (hours)
-- Major Dependencies / Resources / Risks (if any)
-
-**Total Hours:** Sum all hours for the term for this team member
+[see development-plan.md](development-plan.md)
 
 ---
 
