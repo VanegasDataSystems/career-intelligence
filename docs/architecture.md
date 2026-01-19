@@ -129,6 +129,29 @@ The UI is kept simple and focuses on functionality rather than design.
 
 ---
 
+User Interface Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant UI as Python UI (Streamlit-or-Evidence-or-Rio-or-Reflex)
+    participant VSS as DuckDB vss (Vector Store)
+    participant AI as LiteLLM / Ollama
+
+    User->>UI: Inputs query (e.g., "What skills do I need for Data Engineering?")
+    Note over UI: UI captures user profile & query
+    
+    UI->>VSS: Sends user query for similarity search
+    VSS-->>UI: Returns relevant Job Postings (Context)
+    
+    UI->>AI: Sends Query + Context + User Skills
+    Note over AI: Local LLM processes Gap Analysis
+    
+    AI-->>UI: Streams AI response & career advice
+    UI->>User: Displays recommendations & skill trends
+```
+
+
 ## Data Flow
 
 1. Job postings are collected from job boards
