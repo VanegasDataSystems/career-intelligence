@@ -1,4 +1,6 @@
 from playwright.sync_api import sync_playwright
+from datetime import datetime
+from db.db import insert_job
 
 
 url = "https://remoteok.com/?search=software%20engineer"
@@ -66,6 +68,7 @@ def main():
         res = load_data(page)
 
         print("jobs count: ", len(res))
+        count = 0 # only load 10 
 
         for r in res:
             job_id = r.get_attribute("data-id")
@@ -96,7 +99,25 @@ def main():
                 print(job_detail[:800])
             else:
                 print(None)
-            
+
+            job = {
+                "job_id": job_id,
+                "job_url": job_url,
+                "title": job_title,
+                "company": job_firm,
+                "location": job_location,
+                "salary": job_salary,
+                "description": job_detail,
+                "ts": datetime.now(),
+            }
+
+            insert_job(job)  # push to db
+
+            count += 1
+            print("pushing", count, job_id)
+            if count >= 10:
+                break
+
         browser.close()
 
 if __name__ == "__main__":
