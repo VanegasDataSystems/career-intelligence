@@ -5,6 +5,7 @@ description = "assuming 3.14 is too cutting edge"
 readme = "README.md"
 requires-python = ">=3.13.11,<3.14"
 dependencies = [
+    "dlt>=1.21.0",
     "duckdb>=1.4.3",
     "playwright>=1.57.0",
     "rio-ui>=0.12",
