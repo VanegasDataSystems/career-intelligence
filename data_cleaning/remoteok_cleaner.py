@@ -27,7 +27,7 @@ def main():
     tags_tuples = con.execute("SELECT value, _dlt_parent_id FROM remoteok_jobs__tags").fetchall() # fetches tags
     
     
-    for job in jobs_tuples[1:2]: # iterates through list of job tuples
+    for job in jobs_tuples[1:]: # iterates through list of job tuples
         cleaned_data_row = [job[5], job[8], job[10], job[12], job[17]]  # id, company, position, location, url added to data row first
         
         desc = job[11]
