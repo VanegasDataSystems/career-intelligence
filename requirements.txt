@@ -1,0 +1,7 @@
+dlt>=1.21.0
+duckdb>=1.4.3
+feedparser>=6.0.12
+playwright>=1.57.0
+rio-ui>=0.12
+bs4==4.14.3
+yake==0.7.1
