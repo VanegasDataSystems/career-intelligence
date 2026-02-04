@@ -24,7 +24,7 @@ graph TD
 
     subgraph Storage ["2. & 3. Data Storage & Transformation"]
         DLT --> |Raw Data| DDB[(DuckDB)]
-        SM[SQLMesh / Transformation] <--> DDB
+        SM[Transformations] <--> DDB
         DDB --> |Cleaned Data| VSS[DuckDB vss]
     end
 
@@ -134,7 +134,7 @@ User Interface Sequence Diagram
 ```mermaid
 sequenceDiagram
     participant User
-    participant UI as Python UI (Streamlit-or-Evidence-or-Rio-or-Reflex)
+    participant UI as Python UI (Rio Framework)
     participant VSS as DuckDB vss (Vector Store)
     participant AI as LiteLLM / Ollama
 
