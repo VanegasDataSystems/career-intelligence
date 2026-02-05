@@ -28,6 +28,6 @@ class TodoAppSettings(rio.UserSettings):
     todo_items: list[TodoItem] = [
         TodoItem(
             title="write the code",
-            creation_time=datetime.datetime.now(),
+            creation_time=datetime.datetime.now().astimezone(),
         ),
     ]
