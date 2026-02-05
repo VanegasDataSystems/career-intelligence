@@ -6,6 +6,36 @@ import html
 from bs4 import BeautifulSoup
 from ftfy import fix_text
 
+# Load canonical skills (once)
+with open("skills.json", "r", encoding="utf-8") as f:
+    skills_by_category = json.load(f)
+
+AMBIGUOUS_SKILLS = {
+    "Go",
+    "R",
+    "C",
+    "Rust",
+    "Swift"
+}
+
+PROGRAMMING_CONTEXT = [
+    "programming",
+    "language",
+    "developer",
+    "engineer",
+    "backend",
+    "software",
+    "experience with",
+    "written in",
+    "using"
+]
+
+CANONICAL_SKILLS = {
+    skill
+    for skills in skills_by_category.values()
+    for skill in skills
+}
+
 # helper function to clean texts others than description
 def clean_text(text):
     if text is None:
@@ -48,6 +78,28 @@ def clean_description(html_text):
 
     return text.strip()
 
+def extract_skills(text):
+    text_lower = text.lower()
+    found = set()
+
+    for skill in CANONICAL_SKILLS:
+        skill_lower = skill.lower()
+
+        # Normal skills: direct match
+        if skill not in AMBIGUOUS_SKILLS:
+            if re.search(rf"\b{re.escape(skill_lower)}\b", text_lower):
+                found.add(skill)
+            continue
+
+        # Ambiguous skills: require context
+        for ctx in PROGRAMMING_CONTEXT:
+            pattern = rf"\b{re.escape(skill_lower)}\b.{0,40}\b{ctx}\b|\b{ctx}\b.{0,40}\b{re.escape(skill_lower)}\b"
+            if re.search(pattern, text_lower):
+                found.add(skill)
+                break
+
+    return sorted(found)
+
 def main():
     con = duckdb.connect("fv/remoteok_loader.duckdb")
     con.sql("use job_listings")
@@ -69,6 +121,7 @@ def main():
 
     for job_id, title, company, location, desc_raw, url in rows:
         desc_clean = clean_description(desc_raw)
+        skills = extract_skills(desc_clean)
 
         jobs.append({
             "job_id": job_id,
@@ -76,13 +129,14 @@ def main():
             "company": clean_text(company),
             "location": clean_text(location),
             "description_clean": desc_clean,
+            "skills": skills,
             "url": url
         })
 
-    with open("jobs_cleaned_phase3.json", "w", encoding="utf-8") as f:
+    with open("jobs_cleaned_with_skills.json", "w", encoding="utf-8") as f:
         json.dump(jobs, f, ensure_ascii=False, indent=2)
 
-    print(f"Wrote {len(jobs)} jobs to jobs_cleaned_phase3.json")
+    print(f"Wrote {len(jobs)} jobs to jobs_cleaned_with_skills.json")
 
 
 if __name__ == "__main__":
