@@ -13,7 +13,7 @@ DB_PATH = Path(__file__).parent.parent.parent / "loader" / "remoteok_loader.duck
 
 @rio.page(
     name="Jobs",
-    url_segment="jobs",
+    url_segment="",
 )
 class JobsPage(rio.Component):
     """Page displaying job listings from the DuckDB database."""
