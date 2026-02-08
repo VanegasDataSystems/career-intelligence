@@ -1,12 +1,8 @@
 from __future__ import annotations
 
-import typing as t
 from pathlib import Path
 
 import rio
-
-from . import components as comps
-from . import data_models
 
 # Define a theme for Rio to use.
 #
@@ -25,7 +21,6 @@ theme = rio.Theme.from_colors(
 # Create the Rio app
 app = rio.App(
     name='ui',
-    default_attachments=[data_models.TodoAppSettings()],
     theme=theme,
     assets_dir=Path(__file__).parent / "assets",
 )
