@@ -4,17 +4,17 @@ from pathlib import Path
 
 import duckdb
 
-DB_PATH = Path(__file__).parent / "remoteok_loader.duckdb"
-SQL_PATH = Path(__file__).parent / "sql" / "create_views.sql"
 
-
-def main():
-    conn = duckdb.connect(str(DB_PATH))
-    sql = SQL_PATH.read_text()
+def create_job_views(db_path, sql_path):
+    conn = duckdb.connect(str(db_path))
+    sql = sql_path.read_text()
     conn.execute(sql)
     conn.close()
-    print(f"Views created successfully in {DB_PATH}")
+    print(f"Views created successfully in {db_path}")
 
 
 if __name__ == "__main__":
-    main()
+    BASE_PATH = Path(__file__).parent
+    DB_PATH = BASE_PATH / "remoteok_loader.duckdb"
+    SQL_PATH = BASE_PATH / "sql" / "create_views.sql"
+    create_job_views(DB_PATH, SQL_PATH)

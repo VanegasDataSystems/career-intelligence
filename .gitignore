@@ -209,5 +209,4 @@ __marimo__/
 
 uv.lock
 jobs.duckdb
-uv.lock
 loader/remoteok_loader.duckdb
