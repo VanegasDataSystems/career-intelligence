@@ -1,19 +1,32 @@
 # UI Folder
 
-A Rio UI web application built with Python 3.13.
+A Rio UI web application built with Python 3.13 for browsing job listings.
 
 ## Folder Structure
 
 - `ui/` - Main application module
   - `__init__.py` - App configuration, theme, and rio.App instance
-  - `data_models.py` - Data models (dataclasses and rio.UserSettings)
+  - `data_models.py` - Data models (dataclasses with `__post_init__` for type conversion)
   - `components/` - Reusable UI components (export new components in `__init__.py`)
+    - `job_card.py` - Card component displaying a single job listing
   - `pages/` - Page components with `@rio.page` decorator
+    - `jobs_page.py` - Main page listing all jobs (root URL)
+    - `about_page.py` - Simple about page
 - `loader/` - Data loading pipelines
   - `remoteok_loader.py` - dlt pipeline for RemoteOK job listings
   - `remoteok_loader.duckdb` - DuckDB database with loaded data
   - `create_views.py` - Script to create/update database views
   - `sql/` - SQL files for views and queries
+
+## Data Flow
+
+1. **Load**: `loader/remoteok_loader.py` fetches jobs from RemoteOK API via dlt pipeline
+2. **Store**: Data stored in DuckDB with schema `job_listings`
+3. **View**: `loader/create_views.py` creates `jobs_with_tags` view joining jobs with tags
+4. **Query**: `jobs_page.py` queries DuckDB using cursor description for column names
+5. **Convert**: Results converted to dicts via `zip(columns, row)` and unpacked into `JobListing(**row)`
+6. **Normalize**: `JobListing.__post_init__` handles type conversions (None -> "", dates -> str)
+7. **Render**: `JobCard` component displays each listing
 
 ## Development
 
@@ -43,8 +56,13 @@ uv run python loader/create_views.py
 
 ## Rio Patterns
 
+### Navigation
+- Rio auto-generates sidebar navigation when multiple pages exist
+- Each `@rio.page` decorator adds a navigation link
+
 ### Pages
 - Use `@rio.page(name="Page Name", url_segment="url-path")` decorator
+- Use `url_segment=""` for the root/home page
 - Inherit from `rio.Component` and implement `build()` method
 - Access session data via `self.session`
 
