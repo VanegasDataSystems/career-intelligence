@@ -20,28 +20,15 @@ class JobsPage(rio.Component):
 
     def _load_jobs(self) -> list[data_models.JobListing]:
         conn = duckdb.connect(str(DB_PATH), read_only=True)
-        result = conn.execute(
+        cursor = conn.execute(
             "SELECT job_id, position, company, location, salary_min, salary_max, date, url, tags "
             "FROM job_listings.jobs_with_tags ORDER BY date DESC"
-        ).fetchall()
+        )
+        columns = [desc[0] for desc in cursor.description]
+        rows = cursor.fetchall()
         conn.close()
 
-        jobs = []
-        for row in result:
-            jobs.append(
-                data_models.JobListing(
-                    job_id=str(row[0]) if row[0] else "",
-                    position=row[1] or "",
-                    company=row[2] or "",
-                    location=row[3] or "",
-                    salary_min=row[4],
-                    salary_max=row[5],
-                    date=str(row[6]) if row[6] else "",
-                    url=row[7] or "",
-                    tags=row[8] or "",
-                )
-            )
-        return jobs
+        return [data_models.JobListing(**dict(zip(columns, row))) for row in rows]
 
     def build(self) -> rio.Component:
         jobs = self._load_jobs()
