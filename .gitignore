@@ -211,3 +211,4 @@ jobs.duckdb
 uv.lock
 
 models/
+loader/remoteok_loader.duckdb
