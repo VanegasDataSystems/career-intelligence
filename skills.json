@@ -1,0 +1,140 @@
+{
+  "programming_languages": [
+        "Python",
+        "C++",
+        "C",
+        "Java",
+        "C#",
+        "Go",
+        "Rust",
+        "JavaScript",
+        "TypeScript",
+        "Scala",
+        "Kotlin",
+        "Swift",
+        "R",
+        "MATLAB",
+        "Bash",
+        "PowerShell"
+  ],
+  "frameworks": [
+        ".NET",
+        ".NET Core",
+        "Spring",
+        "Spring Boot",
+        "Django",
+        "Flask",
+        "FastAPI",
+        "React",
+        "Angular",
+        "Vue",
+        "Node.js",
+        "Express",
+        "Next.js"
+  ],
+  "databases": [
+        "SQL",
+        "PostgreSQL",
+        "MySQL",
+        "SQL Server",
+        "Oracle",
+        "MongoDB",
+        "Redis",
+        "Elasticsearch",
+        "Cassandra",
+        "DynamoDB"
+  ],
+  "cloud": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "CloudFormation",
+        "Linux",
+        "Unix",
+        "Nginx",
+        "Apache"
+  ],
+  "devops": [
+        "CI/CD",
+        "Git",
+        "GitHub",
+        "GitLab",
+        "Jenkins",
+        "ArgoCD",
+        "Ansible",
+        "Prometheus",
+        "Grafana"
+  ],
+  "api": [
+        "REST",
+        "GraphQL",
+        "gRPC",
+        "WebSockets",
+        "API Gateway"
+  ],
+  "architecture": [
+        "Microservices",
+        "Distributed Systems",
+        "Event-Driven Architecture",
+        "Message Queues",
+        "Kafka",
+        "RabbitMQ",
+        "SNS",
+        "SQS",
+        "CQRS",
+        "Domain-Driven Design",
+        "Clean Architecture"
+  ],
+  "trading_finance": [
+        "Low Latency Systems",
+        "High Frequency Trading",
+        "Trading Systems",
+        "FIX Protocol",
+        "Market Data",
+        "Order Management Systems",
+        "Risk Systems",
+        "Real-Time Systems"
+  ],
+  "machine_learning":[
+        "Data Analysis",
+        "Machine Learning",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "TensorFlow",
+        "PyTorch",
+        "Spark"
+  ],
+  "testing": [
+        "Unit Testing",
+        "Integration Testing",
+        "Test Automation",
+        "Performance Testing",
+        "Load Testing"
+  ],
+  "security": [
+        "OAuth",
+        "JWT",
+        "Authentication",
+        "Authorization",
+        "Application Security",
+        "Network Security"
+  ],
+  "design": [
+        "UX Design",
+        "UI Design",
+        "Product Design",
+        "Interaction Design",
+        "User Experience",
+        "User Research",
+        "Usability Testing",
+        "Design Systems",
+        "Information Architecture",
+        "Data Visualization",
+        "Wireframing",
+        "Prototyping"
+        ]
+}
