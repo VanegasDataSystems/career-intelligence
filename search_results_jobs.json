@@ -346,5 +346,92 @@
         "url": "https://remoteOK.com/remote-jobs/remote-data-conversion-engineer-lumin-digital-1129703"
       }
     ]
+  },
+  {
+    "search_id": 5,
+    "role_query": "software engineer",
+    "location_filter": "",
+    "jobs": [
+      {
+        "job_id": 1129624,
+        "title": "Staff Security Engineer",
+        "company": "",
+        "location": "San Francisco, CA",
+        "score": 0.473,
+        "url": "https://remoteOK.com/remote-jobs/remote-staff-security-engineer-1129624"
+      },
+      {
+        "job_id": 1129702,
+        "title": "Senior Software Engineer Data Platform",
+        "company": "MissionWired",
+        "location": "",
+        "score": 0.4153,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-software-engineer-data-platform-missionwired-1129702"
+      },
+      {
+        "job_id": 1129691,
+        "title": "FrontEnd Engineer",
+        "company": "ClearScore Technology Limited",
+        "location": "Cape Town",
+        "score": 0.4117,
+        "url": "https://remoteOK.com/remote-jobs/remote-frontend-engineer-clearscore-technology-limited-1129691"
+      },
+      {
+        "job_id": 1129608,
+        "title": "Software Engineer I",
+        "company": "Pattern Data",
+        "location": "US",
+        "score": 0.4084,
+        "url": "https://remoteOK.com/remote-jobs/remote-software-engineer-i-pattern-data-1129608"
+      },
+      {
+        "job_id": 1129615,
+        "title": "Staff Software Engineer Cloud Infrastructure",
+        "company": "Tenstorrent",
+        "location": "United States",
+        "score": 0.408,
+        "url": "https://remoteOK.com/remote-jobs/remote-staff-software-engineer-cloud-infrastructure-tenstorrent-1129615"
+      },
+      {
+        "job_id": 1129685,
+        "title": "Backend Developer",
+        "company": "Evolve Tech LLC",
+        "location": "",
+        "score": 0.403,
+        "url": "https://remoteOK.com/remote-jobs/remote-backend-developer-evolve-tech-llc-1129685"
+      },
+      {
+        "job_id": 1129644,
+        "title": "Senior Infrastructure Engineer",
+        "company": "Peregrine Technologies",
+        "location": "Washington, D.C.",
+        "score": 0.4029,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-infrastructure-engineer-peregrine-technologies-1129644"
+      },
+      {
+        "job_id": 1129711,
+        "title": "2026 Associate Solution Consultant Malaysia",
+        "company": "RainFocus",
+        "location": "Kuala Lumpur",
+        "score": 0.3918,
+        "url": "https://remoteOK.com/remote-jobs/remote-2026-associate-solution-consultant-malaysia-rainfocus-1129711"
+      },
+      {
+        "job_id": 1129694,
+        "title": "Technical Project Manager",
+        "company": "DataKind",
+        "location": "",
+        "score": 0.3886,
+        "url": "https://remoteOK.com/remote-jobs/remote-technical-project-manager-datakind-1129694"
+      },
+      {
+        "job_id": 1129675,
+        "title": "Software Engineer Core Platform",
+        "company": "Cribl",
+        "location": "United States",
+        "score": 0.3848,
+        "url": "https://remoteOK.com/remote-jobs/remote-software-engineer-core-platform-cribl-1129675"
+      }
+    ]
   }
 ]

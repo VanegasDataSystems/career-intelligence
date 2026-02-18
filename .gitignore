@@ -207,7 +207,4 @@ marimo/_lsp/
 __marimo__/
 .idea/
 
-jobs.duckdb
 uv.lock
-
-models/

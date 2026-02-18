@@ -178,5 +178,52 @@
         "score": 0.3935
       }
     ]
+  },
+  {
+    "search_id": 5,
+    "role_query": "software engineer",
+    "location_filter": "",
+    "skills": [
+      {
+        "name": "TypeScript",
+        "score": 1.6779
+      },
+      {
+        "name": "CI/CD",
+        "score": 1.2658
+      },
+      {
+        "name": "AWS",
+        "score": 1.2143
+      },
+      {
+        "name": "PostgreSQL",
+        "score": 0.8114
+      },
+      {
+        "name": "Kubernetes",
+        "score": 0.8109
+      },
+      {
+        "name": "Node.js",
+        "score": 0.7965
+      },
+      {
+        "name": "Machine Learning",
+        "score": 0.4153
+      },
+      {
+        "name": "Express",
+        "score": 0.4117
+      },
+      {
+        "name": "JavaScript",
+        "score": 0.4117
+      },
+      {
+        "name": "Next.js",
+        "score": 0.4117
+      }
+    ]
   }
 ]
