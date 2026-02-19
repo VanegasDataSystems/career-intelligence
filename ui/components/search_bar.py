@@ -11,11 +11,17 @@ class SearchBar(rio.Component):
     query: str = ""
     on_search: Callable[[str], None] = lambda _: None
 
+    _current_text: str = ""
+
+    def _on_change(self, event: rio.TextInputChangeEvent) -> None:
+        self._current_text = event.text
+
     def _on_submit(self, event: rio.TextInputConfirmEvent) -> None:
-        self.on_search(self.query)
+        self._current_text = event.text
+        self.on_search(event.text)
 
     def _on_click(self) -> None:
-        self.on_search(self.query)
+        self.on_search(self._current_text)
 
     def build(self) -> rio.Component:
         return rio.Row(
@@ -23,6 +29,7 @@ class SearchBar(rio.Component):
                 text=self.bind().query,
                 label="Search roles...",
                 on_confirm=self._on_submit,
+                on_change=self._on_change,
                 grow_x=True,
             ),
             rio.Button(

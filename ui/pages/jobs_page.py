@@ -22,9 +22,12 @@ _SEARCH_JOBS: list[dict] = _load_json("search_results_jobs.json")
 _SEARCH_SKILLS: list[dict] = _load_json("search_results_skills.json")
 _JOBS_WITH_SKILLS: list[dict] = _load_json("jobs_cleaned_with_skills.json")
 
-# Build a job_id → skills lookup from the cleaned jobs data
+# Build lookups from the cleaned jobs data
 _SKILLS_BY_JOB: dict[str, list[str]] = {
     str(j["job_id"]): j.get("skills", []) for j in _JOBS_WITH_SKILLS
+}
+_DESCRIPTION_BY_JOB: dict[str, str] = {
+    str(j["job_id"]): j.get("description_clean", "") for j in _JOBS_WITH_SKILLS
 }
 
 
@@ -90,11 +93,12 @@ class JobsPage(rio.Component):
             )
             return
 
-        # Build SearchJobResult list, enriching with skills from cleaned data
+        # Build SearchJobResult list, enriching with skills and description from cleaned data
         jobs = []
         for j in jobs_entry["jobs"]:
             job_id = str(j["job_id"])
             skills = _SKILLS_BY_JOB.get(job_id, [])
+            description = _DESCRIPTION_BY_JOB.get(job_id, "")
             jobs.append(
                 data_models.SearchJobResult(
                     job_id=job_id,
@@ -104,6 +108,7 @@ class JobsPage(rio.Component):
                     score=j["score"],
                     url=j["url"],
                     skills=skills,
+                    description=description,
                 )
             )
 
@@ -125,7 +130,6 @@ class JobsPage(rio.Component):
         desktop_layout = self.session.window_width > 40
 
         sections: list[rio.Component] = [
-            rio.Text("Career Intelligence", style="heading1", justify="center"),
             comps.SearchBar(
                 query=self.search_query,
                 on_search=self._on_search,
@@ -167,7 +171,7 @@ class JobsPage(rio.Component):
                     for s in self.search_results.skills
                 ]
                 sections.append(
-                    rio.Text("Top Skills", style="heading2"),
+                    rio.Text("Skill Highlights", style="heading2"),
                 )
                 sections.append(
                     rio.FlowContainer(
@@ -177,15 +181,13 @@ class JobsPage(rio.Component):
                     )
                 )
 
-            # AI summary placeholder
+            # AI summary
+            sections.append(rio.Text("AI Summary", style="heading2"))
             sections.append(comps.AiSummaryPlaceholder())
 
             # Results header
             sections.append(
-                rio.Text(
-                    f"Found {len(self.search_results.jobs)} jobs for '{self.search_results.query}'",
-                    style="heading2",
-                )
+                rio.Text("Job Results", style="heading2")
             )
 
             # Job cards
