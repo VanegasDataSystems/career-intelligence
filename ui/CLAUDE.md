@@ -1,40 +1,46 @@
 # UI Folder
 
-A Rio UI web application built with Python 3.13 for browsing job listings.
+A Rio UI web application built with Python 3.13 for searching and browsing job listings.
 
 ## Folder Structure
 
 - `ui/` - Main application module
   - `__init__.py` - App configuration, theme, and rio.App instance
-  - `data_models.py` - Data models (dataclasses with `__post_init__` for type conversion)
+  - `data_models.py` - Data models (`SearchJobResult`, `SkillHighlight`, `SearchResponse`)
   - `components/` - Reusable UI components (export new components in `__init__.py`)
-    - `job_card.py` - Card component displaying a single job listing
+    - `search_bar.py` - Search input with Enter and button submit; uses `on_change` to track text
+    - `job_card.py` - `SearchJobCard`: displays title, company, description
+    - `skill_chip.py` - Chip badge for a skill with relevance score
+    - `ai_summary_placeholder.py` - Card placeholder for AI-generated summary text
   - `pages/` - Page components with `@rio.page` decorator
-    - `jobs_page.py` - Main page listing all jobs (root URL)
+    - `jobs_page.py` - Main search page (root URL); loads JSON at module level, matches queries via word overlap
     - `about_page.py` - Simple about page
-- `loader/` - Data loading pipelines
-  - `remoteok_loader.py` - dlt pipeline for RemoteOK job listings
-  - `remoteok_loader.duckdb` - DuckDB database with loaded data
-  - `create_views.py` - Script to create/update database views
-  - `sql/` - SQL files for views and queries
 
 ## Data Flow
 
-1. **Load**: `loader/remoteok_loader.py` fetches jobs from RemoteOK API via dlt pipeline
-2. **Store**: Data stored in DuckDB with schema `job_listings`
-3. **View**: `loader/create_views.py` creates `jobs_with_tags` view joining jobs with tags
-4. **Query**: `jobs_page.py` queries DuckDB using cursor description for column names
-5. **Convert**: Results converted to dicts via `zip(columns, row)` and unpacked into `JobListing(**row)`
-6. **Normalize**: `JobListing.__post_init__` handles type conversions (None -> "", dates -> str)
-7. **Render**: `JobCard` component displays each listing
+Pre-computed pipeline outputs (JSON files in project root) are loaded once at module startup:
+
+1. `search_results_jobs.json` — list of `{search_id, role_query, jobs[]}` entries
+2. `search_results_skills.json` — list of `{search_id, skills[]}` entries
+3. `jobs_cleaned_with_skills.json` — cleaned job records with `description_clean` and `skills[]`
+
+At search time (`_on_search`):
+1. User query matched to best `role_query` via word-overlap score
+2. `SearchJobResult` list built, enriched with `description` and `skills` from cleaned data
+3. `SkillHighlight` list built from matched skills entry
+4. `SearchResponse` stored in component state; `build()` re-renders
+
+**No database access in the UI layer.** All data comes from JSON files.
+
+## LLM Integration (pending)
+
+- `SearchResponse.ai_summary` field is ready to receive generated text
+- `AiSummaryPlaceholder` accepts `summary_text` param — wire in once Giang's endpoint is available
+- Giang's `llm/` module (`llm-v1` branch) uses TinyLlama via HuggingFace `transformers`
+- To test locally: `git checkout origin/llm-v1 -- llm/` then `python -m llm.run`
+- Requires: `torch`, `transformers`, `accelerate` and model at `models/tiny-llama/`
 
 ## Development
-
-### Setup
-
-```bash
-uv sync
-```
 
 ### Run Development Server
 
@@ -42,54 +48,42 @@ uv sync
 uv run rio run
 ```
 
-### Run Data Loader
+Hot reload is active — no restart needed after file changes.
+
+### Run Data Loader (pipeline, not needed for UI)
 
 ```bash
 uv run python loader/remoteok_loader.py
-```
-
-### Create/Update Database Views
-
-```bash
 uv run python loader/create_views.py
 ```
 
 ## Rio Patterns
 
-### Navigation
-- Rio auto-generates sidebar navigation when multiple pages exist
-- Each `@rio.page` decorator adds a navigation link
-
 ### Pages
 - Use `@rio.page(name="Page Name", url_segment="url-path")` decorator
 - Use `url_segment=""` for the root/home page
 - Inherit from `rio.Component` and implement `build()` method
-- Access session data via `self.session`
 
 ### Components
-- Inherit from `rio.Component`
-- Define attributes as class variables (rio handles state)
-- Implement `build()` method returning a `rio.Component`
+- Inherit from `rio.Component`; define attributes as class variables
+- Implement `build()` returning a `rio.Component`
 - Export new components in `ui/components/__init__.py`
+- Use `self.bind().attr` for two-way TextInput binding; also add `on_change` handler to capture text reliably before confirm/click events fire
 
 ### Common Rio Components
-- `rio.Column`, `rio.Row` - Layout containers with `spacing`, `margin`
-- `rio.Card` - Card container
-- `rio.Text` - Text with `style` (e.g., "heading1", "heading2", or `rio.TextStyle`)
-- `rio.Link` - Links with `target_url` and `open_in_new_tab`
-- `rio.Spacer` - Flexible space filler
-
-## Database Schema
-
-The DuckDB database (`loader/remoteok_loader.duckdb`) contains:
-- `job_listings.remoteok_jobs` - Main jobs table with `_dlt_id` as internal ID
-- `job_listings.remoteok_jobs__tags` - Tags table with `_dlt_parent_id` foreign key
-- `job_listings.jobs_with_tags` - View joining jobs with aggregated tags
+- `rio.Column`, `rio.Row` — layout with `spacing`, `margin`
+- `rio.Card` — card container with `margin_bottom`
+- `rio.Text` — text with `style` (`"heading1"`, `"heading2"`, `"heading3"`, or `rio.TextStyle`)
+- `rio.TextInput` — text field with `on_confirm`, `on_change`, `text=self.bind().attr`
+- `rio.Button` — button with `on_press`
+- `rio.FlowContainer` — wrapping chip layout with `row_spacing`, `column_spacing`
+- `rio.Separator` — horizontal rule
+- `rio.Spacer` — flexible space filler
+- `rio.Link` — link with `target_url` and `open_in_new_tab`
 
 ## Tech Stack
 
 - **Framework**: [Rio UI](https://rio.dev) (v0.12+)
-- **Data Pipeline**: dlt (data load tool)
-- **Database**: DuckDB
+- **Data Pipeline**: dlt + DuckDB (loader layer, separate from UI)
 - **Package Manager**: uv
 - **Python**: 3.13
