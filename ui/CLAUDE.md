@@ -13,7 +13,7 @@ A Rio UI web application built with Python 3.13 for searching and browsing job l
     - `skill_chip.py` - Chip badge for a skill with relevance score
     - `ai_summary_placeholder.py` - Card placeholder for AI-generated summary text
   - `pages/` - Page components with `@rio.page` decorator
-    - `jobs_page.py` - Main search page (root URL); loads JSON at module level, matches queries via word overlap
+    - `jobs_page.py` - Main search page (root URL); loads JSON at module level, renders results via dropdown selection
     - `about_page.py` - Simple about page
 
 ## Data Flow
@@ -24,8 +24,8 @@ Pre-computed pipeline outputs (JSON files in project root) are loaded once at mo
 2. `search_results_skills.json` — list of `{search_id, skills[]}` entries
 3. `jobs_cleaned_with_skills.json` — cleaned job records with `description_clean` and `skills[]`
 
-At search time (`_on_search`):
-1. User query matched to best `role_query` via word-overlap score
+On role selection (`_on_select`):
+1. User picks a `role_query` from the dropdown (exact match, no scoring logic)
 2. `SearchJobResult` list built, enriched with `description` and `skills` from cleaned data
 3. `SkillHighlight` list built from matched skills entry
 4. `SearchResponse` stored in component state; `build()` re-renders
@@ -35,8 +35,8 @@ At search time (`_on_search`):
 ## LLM Integration (pending)
 
 - `SearchResponse.ai_summary` field is ready to receive generated text
-- `AiSummaryPlaceholder` accepts `summary_text` param — wire in once Giang's endpoint is available
-- Giang's `llm/` module (`llm-v1` branch) uses TinyLlama via HuggingFace `transformers`
+- `AiSummaryPlaceholder` accepts `summary_text` param — wire in once the LLM endpoint is available
+- The `llm/` module (`llm-v1` branch) uses TinyLlama via HuggingFace `transformers`
 - To test locally: `git checkout origin/llm-v1 -- llm/` then `python -m llm.run`
 - Requires: `torch`, `transformers`, `accelerate` and model at `models/tiny-llama/`
 
