@@ -32,13 +32,64 @@ On role selection (`_on_select`):
 
 **No database access in the UI layer.** All data comes from JSON files.
 
-## LLM Integration (pending)
+## RAG Flow Integration Plan
 
-- `SearchResponse.ai_summary` field is ready to receive generated text
-- `AiSummaryPlaceholder` accepts `summary_text` param — wire in once the LLM endpoint is available
-- The `llm/` module (`llm-v1` branch) uses TinyLlama via HuggingFace `transformers`
-- To test locally: `git checkout origin/llm-v1 -- llm/` then `python -m llm.run`
-- Requires: `torch`, `transformers`, `accelerate` and model at `models/tiny-llama/`
+### Current State (known)
+
+The `llm/` module (`llm-v1` branch) is a **CLI script**, not an HTTP service:
+- `llm/run.py` reads the last entry from `search_results_jobs.json` + `search_results_skills.json`
+- Calls `generate_explanation(role_query, skills, jobs)` in `llm/model.py`
+- `model.py` loads TinyLlama from `models/tiny-llama/` via HuggingFace `transformers`
+- Writes output to `final_results.json`
+
+**Known response shape** (from `final_results.json`):
+```
+{
+  "search_id": 5,
+  "role_query": "software engineer",
+  "location_filter": "",
+  "jobs": [ ... ],
+  "skills": [ ... ],
+  "ai_summary": "Generated paragraph text..."
+}
+```
+
+This maps directly onto `SearchResponse` — the data model is already aligned.
+
+**UI scaffolding already in place:**
+- `SearchResponse.ai_summary: str` field ready to receive text
+- `AiSummaryPlaceholder(summary_text=...)` renders whatever string is passed
+- `search_bar.py` exists and works — ready to replace the dropdown when backend is live
+
+### What Requires RAG Inspection
+
+Before wiring the UI to the backend, confirm:
+
+1. **HTTP interface** — Does `llm/run.py` get wrapped in a FastAPI/Flask endpoint, or called as a subprocess? Need the URL, method, and request body shape.
+2. **Request format** — Does the endpoint accept `{"query": "trading engineer"}` or something else?
+3. **Response format** — Confirm it matches the known `final_results.json` shape above, or document any differences.
+4. **Synchronous vs. streaming** — TinyLlama generation is slow (~5–30s). Is the response returned all at once, or streamed token-by-token? Streaming would require `rio` async handling.
+5. **Error responses** — What does the endpoint return on failure (bad query, model not loaded, timeout)?
+
+### UI Changes When Backend Is Ready
+
+1. **Replace dropdown with `SearchBar`** — swap `rio.Dropdown` back to `comps.SearchBar` in `jobs_page.py`
+2. **Add loading state** — new `is_loading: bool` attribute on `JobsPage`; show a spinner while awaiting response
+3. **Call the endpoint** — in `_on_search()`, POST the query via `httpx` or `aiohttp`; parse JSON response into `SearchResponse`
+4. **Render `ai_summary`** — pass `self.search_results.ai_summary` to `AiSummaryPlaceholder(summary_text=...)`
+5. **Handle errors** — show an error message if the endpoint is unreachable or returns non-200
+
+### To Test LLM Locally (CLI, no endpoint)
+
+```bash
+git checkout origin/llm-v1 -- llm/
+uv pip install torch transformers accelerate
+# Download TinyLlama model (~2GB) to models/tiny-llama/
+python -m llm.run
+# Output written to final_results.json
+```
+
+Machine has RTX 4060 Ti (16GB VRAM) — TinyLlama runs fully GPU-accelerated.
 
 ## Development
 

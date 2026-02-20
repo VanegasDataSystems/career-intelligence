@@ -20,7 +20,8 @@ theme = rio.Theme.from_colors(
 
 # Create the Rio app
 app = rio.App(
-    name='ui',
+    name='Career Intelligence',
+    description='Find the skills employers want and discover what to learn next.',
     theme=theme,
     assets_dir=Path(__file__).parent / "assets",
 )
