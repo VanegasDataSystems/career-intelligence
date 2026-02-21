@@ -1,0 +1,229 @@
+[
+  {
+    "search_id": 1,
+    "role_query": "manager",
+    "location_filter": "",
+    "skills": [
+      {
+        "name": "Data Analysis",
+        "score": 0.546
+      },
+      {
+        "name": "User Experience",
+        "score": 0.5307
+      },
+      {
+        "name": "Machine Learning",
+        "score": 0.2875
+      },
+      {
+        "name": "AWS",
+        "score": 0.2504
+      },
+      {
+        "name": "Docker",
+        "score": 0.2504
+      },
+      {
+        "name": "Kubernetes",
+        "score": 0.2504
+      },
+      {
+        "name": "Terraform",
+        "score": 0.2504
+      },
+      {
+        "name": "Authentication",
+        "score": 0.2469
+      }
+    ]
+  },
+  {
+    "search_id": 2,
+    "role_query": "frontend engineer",
+    "location_filter": "United States",
+    "skills": [
+      {
+        "name": "CI/CD",
+        "score": 0.8367
+      },
+      {
+        "name": "Ansible",
+        "score": 0.4479
+      },
+      {
+        "name": "Grafana",
+        "score": 0.4479
+      },
+      {
+        "name": "Kubernetes",
+        "score": 0.4479
+      },
+      {
+        "name": "Linux",
+        "score": 0.4479
+      },
+      {
+        "name": "Prometheus",
+        "score": 0.4479
+      },
+      {
+        "name": "Python",
+        "score": 0.4479
+      },
+      {
+        "name": "Distributed Systems",
+        "score": 0.3888
+      },
+      {
+        "name": "Node.js",
+        "score": 0.3888
+      },
+      {
+        "name": "TypeScript",
+        "score": 0.3888
+      }
+    ]
+  },
+  {
+    "search_id": 3,
+    "role_query": "hr remote",
+    "location_filter": "",
+    "skills": [
+      {
+        "name": "Kubernetes",
+        "score": 0.8549
+      },
+      {
+        "name": "Docker",
+        "score": 0.5824
+      },
+      {
+        "name": "GCP",
+        "score": 0.5824
+      },
+      {
+        "name": "Python",
+        "score": 0.5824
+      },
+      {
+        "name": "Terraform",
+        "score": 0.5824
+      },
+      {
+        "name": "AWS",
+        "score": 0.5385
+      },
+      {
+        "name": "Azure",
+        "score": 0.5385
+      },
+      {
+        "name": "Authorization",
+        "score": 0.4027
+      },
+      {
+        "name": "CI/CD",
+        "score": 0.3164
+      },
+      {
+        "name": "Django",
+        "score": 0.3164
+      }
+    ]
+  },
+  {
+    "search_id": 4,
+    "role_query": "trading engineer",
+    "location_filter": "",
+    "skills": [
+      {
+        "name": "TypeScript",
+        "score": 0.8289
+      },
+      {
+        "name": "React",
+        "score": 0.8115
+      },
+      {
+        "name": "Market Data",
+        "score": 0.5269
+      },
+      {
+        "name": "Express",
+        "score": 0.4453
+      },
+      {
+        "name": "JavaScript",
+        "score": 0.4453
+      },
+      {
+        "name": "Next.js",
+        "score": 0.4453
+      },
+      {
+        "name": "Node.js",
+        "score": 0.4453
+      },
+      {
+        "name": "AWS",
+        "score": 0.3935
+      },
+      {
+        "name": "Docker",
+        "score": 0.3935
+      },
+      {
+        "name": "Kubernetes",
+        "score": 0.3935
+      }
+    ]
+  },
+  {
+    "search_id": 5,
+    "role_query": "software engineer",
+    "location_filter": "",
+    "skills": [
+      {
+        "name": "TypeScript",
+        "score": 1.6779
+      },
+      {
+        "name": "CI/CD",
+        "score": 1.2658
+      },
+      {
+        "name": "AWS",
+        "score": 1.2143
+      },
+      {
+        "name": "PostgreSQL",
+        "score": 0.8114
+      },
+      {
+        "name": "Kubernetes",
+        "score": 0.8109
+      },
+      {
+        "name": "Node.js",
+        "score": 0.7965
+      },
+      {
+        "name": "Machine Learning",
+        "score": 0.4153
+      },
+      {
+        "name": "Express",
+        "score": 0.4117
+      },
+      {
+        "name": "JavaScript",
+        "score": 0.4117
+      },
+      {
+        "name": "Next.js",
+        "score": 0.4117
+      }
+    ]
+  }
+]

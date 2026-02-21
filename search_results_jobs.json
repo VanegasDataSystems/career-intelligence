@@ -1,0 +1,437 @@
+[
+  {
+    "search_id": 1,
+    "role_query": "manager",
+    "location_filter": "",
+    "jobs": [
+      {
+        "job_id": 1129676,
+        "title": "Revenue Operations Analyst",
+        "company": "TrueML",
+        "location": "",
+        "score": 0.2875,
+        "url": "https://remoteOK.com/remote-jobs/remote-revenue-operations-analyst-trueml-1129676"
+      },
+      {
+        "job_id": 1129654,
+        "title": "Senior Product Marketing Manager",
+        "company": "GoodLeap",
+        "location": "Remote, US",
+        "score": 0.2585,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-product-marketing-manager-goodleap-1129654"
+      },
+      {
+        "job_id": 1129644,
+        "title": "Senior Infrastructure Engineer",
+        "company": "Peregrine Technologies",
+        "location": "Washington, D.C.",
+        "score": 0.2504,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-infrastructure-engineer-peregrine-technologies-1129644"
+      },
+      {
+        "job_id": 1129700,
+        "title": "Japan Marketing Manager",
+        "company": "Manta Network, Powered by p0x labs",
+        "location": "Tokyo",
+        "score": 0.2489,
+        "url": "https://remoteOK.com/remote-jobs/remote-japan-marketing-manager-manta-network-powered-by-p0x-labs-1129700"
+      },
+      {
+        "job_id": 1129650,
+        "title": "Senior Full Stack Software Engineer CRM",
+        "company": "Circle.so",
+        "location": "Remote",
+        "score": 0.2469,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-full-stack-software-engineer-crm-circle-so-1129650"
+      },
+      {
+        "job_id": 1129670,
+        "title": "HR Coordinator",
+        "company": "Smartbug Media",
+        "location": "Remote, United States",
+        "score": 0.2467,
+        "url": "https://remoteOK.com/remote-jobs/remote-hr-coordinator-smartbug-media-1129670"
+      },
+      {
+        "job_id": 1129613,
+        "title": "Implementation Specialist Spanish Speaking",
+        "company": "Roofr",
+        "location": "",
+        "score": 0.2441,
+        "url": "https://remoteOK.com/remote-jobs/remote-implementation-specialist-spanish-speaking-roofr-1129613"
+      },
+      {
+        "job_id": 1129709,
+        "title": "Quality Assurance Analyst",
+        "company": "OppFi",
+        "location": "",
+        "score": 0.2437,
+        "url": "https://remoteOK.com/remote-jobs/remote-quality-assurance-analyst-oppfi-1129709"
+      },
+      {
+        "job_id": 1129673,
+        "title": "CUSTOMER SUCCESS MANAGER",
+        "company": "Wishpond Technologies",
+        "location": "South Africa",
+        "score": 0.2432,
+        "url": "https://remoteOK.com/remote-jobs/remote-customer-success-manager-wishpond-technologies-1129673"
+      },
+      {
+        "job_id": 1129642,
+        "title": "Strategic Partnerships Account Manager",
+        "company": "Wellhub",
+        "location": "Barcelona",
+        "score": 0.2429,
+        "url": "https://remoteOK.com/remote-jobs/remote-strategic-partnerships-account-manager-wellhub-1129642"
+      }
+    ]
+  },
+  {
+    "search_id": 2,
+    "role_query": "frontend engineer",
+    "location_filter": "United States",
+    "jobs": [
+      {
+        "job_id": 1129615,
+        "title": "Staff Software Engineer Cloud Infrastructure",
+        "company": "Tenstorrent",
+        "location": "United States",
+        "score": 0.4479,
+        "url": "https://remoteOK.com/remote-jobs/remote-staff-software-engineer-cloud-infrastructure-tenstorrent-1129615"
+      },
+      {
+        "job_id": 1129675,
+        "title": "Software Engineer Core Platform",
+        "company": "Cribl",
+        "location": "United States",
+        "score": 0.3888,
+        "url": "https://remoteOK.com/remote-jobs/remote-software-engineer-core-platform-cribl-1129675"
+      },
+      {
+        "job_id": 1129660,
+        "title": "Staff Software Engineer DevProd",
+        "company": "Temporal Technologies",
+        "location": "United States",
+        "score": 0.3536,
+        "url": "https://remoteOK.com/remote-jobs/remote-staff-software-engineer-devprod-temporal-technologies-1129660"
+      },
+      {
+        "job_id": 1129609,
+        "title": "Product Manager Automotive Vertical",
+        "company": "Conversica",
+        "location": "United States, Remote",
+        "score": 0.3244,
+        "url": "https://remoteOK.com/remote-jobs/remote-product-manager-automotive-vertical-conversica-1129609"
+      },
+      {
+        "job_id": 1129678,
+        "title": "Senior Workforce Management Analyst",
+        "company": "Cohere Health",
+        "location": "United States",
+        "score": 0.3196,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-workforce-management-analyst-cohere-health-1129678"
+      },
+      {
+        "job_id": 1129670,
+        "title": "HR Coordinator",
+        "company": "Smartbug Media",
+        "location": "Remote, United States",
+        "score": 0.3137,
+        "url": "https://remoteOK.com/remote-jobs/remote-hr-coordinator-smartbug-media-1129670"
+      },
+      {
+        "job_id": 1129631,
+        "title": "Sales Development Representative",
+        "company": "Bounteous",
+        "location": "United States",
+        "score": 0.3078,
+        "url": "https://remoteOK.com/remote-jobs/remote-sales-development-representative-bounteous-1129631"
+      },
+      {
+        "job_id": 1129715,
+        "title": "Technical Customer Support Associate",
+        "company": "Narmi",
+        "location": "United States",
+        "score": 0.2901,
+        "url": "https://remoteOK.com/remote-jobs/remote-technical-customer-support-associate-narmi-1129715"
+      },
+      {
+        "job_id": 1129657,
+        "title": "Account Executive",
+        "company": "Lone Wolf Technologies",
+        "location": "United States (Remote)",
+        "score": 0.2873,
+        "url": "https://remoteOK.com/remote-jobs/remote-account-executive-lone-wolf-technologies-1129657"
+      },
+      {
+        "job_id": 1129712,
+        "title": "Senior Executive Assistant the CEO",
+        "company": "Agiloft",
+        "location": "United States",
+        "score": 0.2672,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-executive-assistant-the-ceo-agiloft-1129712"
+      }
+    ]
+  },
+  {
+    "search_id": 3,
+    "role_query": "hr remote",
+    "location_filter": "",
+    "jobs": [
+      {
+        "job_id": 1129670,
+        "title": "HR Coordinator",
+        "company": "Smartbug Media",
+        "location": "Remote, United States",
+        "score": 0.5044,
+        "url": "https://remoteOK.com/remote-jobs/remote-hr-coordinator-smartbug-media-1129670"
+      },
+      {
+        "job_id": 1129651,
+        "title": "Insurance Follow Up Specialist Outpatient Infusion Therapy",
+        "company": "IVX Health",
+        "location": "",
+        "score": 0.4027,
+        "url": "https://remoteOK.com/remote-jobs/remote-insurance-follow-up-specialist-outpatient-infusion-therapy-ivx-health-1129651"
+      },
+      {
+        "job_id": 1129677,
+        "title": "Senior Full Stack Software Engineer",
+        "company": "Empassion",
+        "location": "New York, NY",
+        "score": 0.3164,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-full-stack-software-engineer-empassion-1129677"
+      },
+      {
+        "job_id": 1129641,
+        "title": "Work From Home Hotel Reservations Customer Service",
+        "company": "Destination Knot",
+        "location": "Atlanta, Georgia",
+        "score": 0.2968,
+        "url": "https://remoteOK.com/remote-jobs/remote-work-from-home-hotel-reservations-customer-service-destination-knot-1129641"
+      },
+      {
+        "job_id": 1129622,
+        "title": "Seeking Professionals for a New Approach an Old Industry",
+        "company": "Global Elite Texas",
+        "location": "Jacksonville, Florida",
+        "score": 0.2805,
+        "url": "https://remoteOK.com/remote-jobs/remote-seeking-professionals-for-a-new-approach-an-old-industry-global-elite-texas-1129622"
+      },
+      {
+        "job_id": 1129650,
+        "title": "Senior Full Stack Software Engineer CRM",
+        "company": "Circle.so",
+        "location": "Remote",
+        "score": 0.273,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-full-stack-software-engineer-crm-circle-so-1129650"
+      },
+      {
+        "job_id": 1129621,
+        "title": "Senior Software Engineer SELECT by DoiT",
+        "company": "DoiT",
+        "location": "",
+        "score": 0.2725,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-software-engineer-select-by-doit-doit-1129621"
+      },
+      {
+        "job_id": 1129694,
+        "title": "Technical Project Manager",
+        "company": "DataKind",
+        "location": "",
+        "score": 0.2705,
+        "url": "https://remoteOK.com/remote-jobs/remote-technical-project-manager-datakind-1129694"
+      },
+      {
+        "job_id": 1129647,
+        "title": "Customer Success Manager Circle Plus",
+        "company": "Circle.so",
+        "location": "",
+        "score": 0.2681,
+        "url": "https://remoteOK.com/remote-jobs/remote-customer-success-manager-circle-plus-circle-so-1129647"
+      },
+      {
+        "job_id": 1129637,
+        "title": "Senior Cloud Infrastructure Engineer Kubernetes",
+        "company": "Camunda",
+        "location": "",
+        "score": 0.266,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-cloud-infrastructure-engineer-kubernetes-camunda-1129637"
+      }
+    ]
+  },
+  {
+    "search_id": 4,
+    "role_query": "trading engineer",
+    "location_filter": "",
+    "jobs": [
+      {
+        "job_id": 1129668,
+        "title": "Crypto Trading Trainee Market Analysis Associate",
+        "company": "WhiteBridge-Ltd",
+        "location": "",
+        "score": 0.5269,
+        "url": "https://remoteOK.com/remote-jobs/remote-crypto-trading-trainee-market-analysis-associate-whitebridge-ltd-1129668"
+      },
+      {
+        "job_id": 1129648,
+        "title": "Experienced Quantitative Trader",
+        "company": "Kronos Research",
+        "location": "Singapore",
+        "score": 0.454,
+        "url": "https://remoteOK.com/remote-jobs/remote-experienced-quantitative-trader-kronos-research-1129648"
+      },
+      {
+        "job_id": 1129691,
+        "title": "FrontEnd Engineer",
+        "company": "ClearScore Technology Limited",
+        "location": "Cape Town",
+        "score": 0.4453,
+        "url": "https://remoteOK.com/remote-jobs/remote-frontend-engineer-clearscore-technology-limited-1129691"
+      },
+      {
+        "job_id": 1129644,
+        "title": "Senior Infrastructure Engineer",
+        "company": "Peregrine Technologies",
+        "location": "Washington, D.C.",
+        "score": 0.3935,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-infrastructure-engineer-peregrine-technologies-1129644"
+      },
+      {
+        "job_id": 1129630,
+        "title": "Account Executive Ohio",
+        "company": "LangChain",
+        "location": "",
+        "score": 0.3844,
+        "url": "https://remoteOK.com/remote-jobs/remote-account-executive-ohio-langchain-1129630"
+      },
+      {
+        "job_id": 1129692,
+        "title": "Technical Support Specialist",
+        "company": "Adyen",
+        "location": "Amsterdam",
+        "score": 0.3841,
+        "url": "https://remoteOK.com/remote-jobs/remote-technical-support-specialist-adyen-1129692"
+      },
+      {
+        "job_id": 1129624,
+        "title": "Staff Security Engineer",
+        "company": "",
+        "location": "San Francisco, CA",
+        "score": 0.3836,
+        "url": "https://remoteOK.com/remote-jobs/remote-staff-security-engineer-1129624"
+      },
+      {
+        "job_id": 1129706,
+        "title": "Senior React Native Developer",
+        "company": "Orium",
+        "location": "Canada",
+        "score": 0.3662,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-react-native-developer-orium-1129706"
+      },
+      {
+        "job_id": 1129627,
+        "title": "Social Media Manager",
+        "company": "Interactive Brokers",
+        "location": "Greenwich, CT",
+        "score": 0.3637,
+        "url": "https://remoteOK.com/remote-jobs/remote-social-media-manager-interactive-brokers-1129627"
+      },
+      {
+        "job_id": 1129703,
+        "title": "Data Conversion Engineer",
+        "company": "Lumin Digital",
+        "location": "",
+        "score": 0.3565,
+        "url": "https://remoteOK.com/remote-jobs/remote-data-conversion-engineer-lumin-digital-1129703"
+      }
+    ]
+  },
+  {
+    "search_id": 5,
+    "role_query": "software engineer",
+    "location_filter": "",
+    "jobs": [
+      {
+        "job_id": 1129624,
+        "title": "Staff Security Engineer",
+        "company": "",
+        "location": "San Francisco, CA",
+        "score": 0.473,
+        "url": "https://remoteOK.com/remote-jobs/remote-staff-security-engineer-1129624"
+      },
+      {
+        "job_id": 1129702,
+        "title": "Senior Software Engineer Data Platform",
+        "company": "MissionWired",
+        "location": "",
+        "score": 0.4153,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-software-engineer-data-platform-missionwired-1129702"
+      },
+      {
+        "job_id": 1129691,
+        "title": "FrontEnd Engineer",
+        "company": "ClearScore Technology Limited",
+        "location": "Cape Town",
+        "score": 0.4117,
+        "url": "https://remoteOK.com/remote-jobs/remote-frontend-engineer-clearscore-technology-limited-1129691"
+      },
+      {
+        "job_id": 1129608,
+        "title": "Software Engineer I",
+        "company": "Pattern Data",
+        "location": "US",
+        "score": 0.4084,
+        "url": "https://remoteOK.com/remote-jobs/remote-software-engineer-i-pattern-data-1129608"
+      },
+      {
+        "job_id": 1129615,
+        "title": "Staff Software Engineer Cloud Infrastructure",
+        "company": "Tenstorrent",
+        "location": "United States",
+        "score": 0.408,
+        "url": "https://remoteOK.com/remote-jobs/remote-staff-software-engineer-cloud-infrastructure-tenstorrent-1129615"
+      },
+      {
+        "job_id": 1129685,
+        "title": "Backend Developer",
+        "company": "Evolve Tech LLC",
+        "location": "",
+        "score": 0.403,
+        "url": "https://remoteOK.com/remote-jobs/remote-backend-developer-evolve-tech-llc-1129685"
+      },
+      {
+        "job_id": 1129644,
+        "title": "Senior Infrastructure Engineer",
+        "company": "Peregrine Technologies",
+        "location": "Washington, D.C.",
+        "score": 0.4029,
+        "url": "https://remoteOK.com/remote-jobs/remote-senior-infrastructure-engineer-peregrine-technologies-1129644"
+      },
+      {
+        "job_id": 1129711,
+        "title": "2026 Associate Solution Consultant Malaysia",
+        "company": "RainFocus",
+        "location": "Kuala Lumpur",
+        "score": 0.3918,
+        "url": "https://remoteOK.com/remote-jobs/remote-2026-associate-solution-consultant-malaysia-rainfocus-1129711"
+      },
+      {
+        "job_id": 1129694,
+        "title": "Technical Project Manager",
+        "company": "DataKind",
+        "location": "",
+        "score": 0.3886,
+        "url": "https://remoteOK.com/remote-jobs/remote-technical-project-manager-datakind-1129694"
+      },
+      {
+        "job_id": 1129675,
+        "title": "Software Engineer Core Platform",
+        "company": "Cribl",
+        "location": "United States",
+        "score": 0.3848,
+        "url": "https://remoteOK.com/remote-jobs/remote-software-engineer-core-platform-cribl-1129675"
+      }
+    ]
+  }
+]
